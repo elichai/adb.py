@@ -18,11 +18,11 @@ class ADB(object):
         return [device for device in devices if len(device) > 2]
 
     def upload(self, fr, to):
-        result = self.call("push " + fr + " " + to)
+        result = self.call('push "' + fr + '" "' + to + '"')
         return result
     
     def get(self, fr, to):
-        result = self.call("pull " + fr + " " + to)
+        result = self.call('pull "' + fr + '" "' + to + '"')
         return result
 
     def install(self, param):
